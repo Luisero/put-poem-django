@@ -1,1 +1,9 @@
 {% extends "core/others/base.html" %}
+
+{% block content %}
+ {% for poem in poems %}
+    <h3>{{poem.title}}</h3>
+    <strong>Author: {{poem.author}}</strong>
+    <p>{{poem.content | safe }}</p>
+ {% endfor  %}
+{% endblock %}

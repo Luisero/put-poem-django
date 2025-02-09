@@ -21,11 +21,20 @@
                 <a href="{% url 'account_signup' %}">SignUp</a>
             </li>
             {% else %}
-            <li class="nav-item"></li>
+            <li class="nav-item">
+                <a href="{% url 'create' %}">Create poem</a>
+            </li>
             {% endif %}
         </nav>
         <nav class="navbar-mobile"></nav>
     </header>
     {% endblock %}
+
+    <main>
+        {% block content%}
+
+        {% endblock content%}
+    </main>
+
 </body>
 </html>
