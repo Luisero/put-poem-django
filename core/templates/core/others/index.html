@@ -1,9 +1,23 @@
 {% extends "core/others/base.html" %}
-
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+{% endblock css %}
 {% block content %}
- {% for poem in poems %}
-    <h3>{{poem.title}}</h3>
-    <strong>Author: {{poem.author}}</strong>
-    <p>{{poem.content | safe }}</p>
+
+<div class="poems-container">
+   {% for poem in poems %}
+   <div class="poem">
+      <div class="div-poem-info">
+         <h3>{{poem.title}}</h3>
+         <strong>Author: {{poem.author}}</strong>
+
+   </div>
+   <div class="poem-content">
+      <p>{{poem.content | safe }}</p>
+      
+   </div>
+
+</div>
  {% endfor  %}
 {% endblock %}

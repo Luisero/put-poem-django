@@ -22,3 +22,7 @@ def create(request):
         form = PoemForm()
 
     return render(request,'core/others/create_poem.html',{'form': form})
+
+
+def profile(request):
+    return render(request, 'core/others/profile.html')
